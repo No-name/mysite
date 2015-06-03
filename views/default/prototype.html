@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{=T.accepted_language or 'en'}}"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!-- www.phpied.com/conditional-comments-block-downloads/ -->
+        <!-- Always force latest IE rendering engine
+             (even in intranet) & Chrome Frame
+             Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+        <!--  Mobile Viewport Fix
+              j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+              device-width: Occupy full width of the screen in its current orientation
+              initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+              user-scalable = yes allows the user to zoom in -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{=response.title or request.application}}</title>
+        <!-- http://dev.w3.org/html5/markup/meta.name.html -->
+        <meta name="application-name" content="{{=request.application}}">
+        <!-- Speaking of Google, don't forget to set your site up:
+             http://google.com/webmasters -->
+
+        <!-- link the style sheet -->
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/pure.css')}}>
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/grids.css')}}>
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/grids-responsive.css')}}>
+        <link rel="stylesheet" type="text/css" href={{=URL('static', 'css/mysite.css')}}>
+
+
+    </head>
+    <body>
+
+        <div class="head">
+            <h1 class="page slogan">This is my site</h1>
+
+            <!-- define the menu part -->
+            <div class="page">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul class="pure-menu-list pure-g">
+                        <li class="pure-menu-item pure-u-1-4"><a class="pure-menu-link menu1 menu-active" href="#">Menu1</a></li>
+                        <li class="pure-menu-item pure-u-1-4"><a class="pure-menu-link menu2" href="#">Menu2</a></li>
+                        <li class="pure-menu-item pure-u-1-4"><a class="pure-menu-link menu3" href="#">Menu3</a></li>
+                        <li class="pure-menu-item pure-u-1-4"><a class="pure-menu-link menu4" href="#">Menu4</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page content">
+
+            <!-- -->
+            <div class="slide">
+                <form class="pure-form post-form">
+                    <input type="text" name="secret" placeholder="the secret" class="pure-input-1 pure-input-rounded">
+                    <fieldset class="pure-group">
+                        <input type="text" name="title" placeholder="the title" class="pure-input-1"/>
+                        <textarea name="message" placeholder="the content" class="pure-input-1" rows="7" ></textarea>
+                    </fieldset>
+
+                    <button type="submit" name="submit" class="pure-input-1 pure-button pure-button-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="slide post">
+                <h2 class="post-head">This is a special message</h2>
+
+                <ul class="post-info">
+                    <li class="post-info-item"><span class="post-info-key">Category</span><span class="post-info-value">Simple</span></li>
+                    <li class="post-info-item"><span class="post-info-key">Date</span><time class="post-info-value">2015.6.2</time></li>
+                </ul>
+
+                <p class="post-content">
+                    Pure doesn't ship with icon fonts, but we play nice with existing ones.
+                    Incorporating icon fonts with Pure Buttons is easy. In the example below, we're using icon fonts from Font Awesome.
+                    Put the Font Awesome CSS file on your page and use an &lt;i&gt; element within a pure-button element...
+                </p>
+
+                <p class="post-content post-content-more">Read More</p>
+
+                <ul class="post-foot">
+                    <li class="post-foot-item"><span class="post-foot-key">Views</span><span class="post-foot-value">150</span></li>
+                    <li class="post-foot-item"><span class="post-foot-key">Comment</span><span class="post-foot-value">30</span></li>
+                </ul>
+            </div>
+
+            <div class="slide post">
+                <h2 class="post-head">This is a special message</h2>
+
+                <ul class="post-info">
+                    <li class="post-info-item"><span class="post-info-key">Category</span><span class="post-info-value">Simple</span></li>
+                    <li class="post-info-item"><span class="post-info-key">Date</span><time class="post-info-value">2015.6.2</time></li>
+                </ul>
+
+                <p class="post-content">
+                    Pure doesn't ship with icon fonts, but we play nice with existing ones.
+                    Incorporating icon fonts with Pure Buttons is easy. In the example below, we're using icon fonts from Font Awesome.
+                    Put the Font Awesome CSS file on your page and use an &lt;i&gt; element within a pure-button element...
+                </p>
+
+                <p class="post-content post-content-more">Read More</p>
+
+                <ul class="post-foot">
+                    <li class="post-foot-item"><span class="post-foot-key">Views</span><span class="post-foot-value">150</span></li>
+                    <li class="post-foot-item"><span class="post-foot-key">Comment</span><span class="post-foot-value">30</span></li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <form class="pure-form link-form">
+                    <input type="text" name="secret" placeholder="Secret" class="pure-input-1 pure-input-rounded">
+
+                    <fieldset class="pure-group">
+                        <input type="text" name="title" placeholder="Title" class="pure-input-1"/>
+                        <input type="text" name="link" placeholder="http://" class="pure-input-1" />
+                        <textarea name="message" placeholder="Description" class="pure-input-1" rows="7" ></textarea>
+                    </fieldset>
+
+                    <button type="submit" name="submit" class="pure-input-1 pure-button pure-button-primary">Submit</button>
+                </form>
+            </div>
+
+            <div class="slide link-group">
+                <h2 class="link-group-head">This is my favorite foot links</h2>
+                <ul class="link-list pure-g">
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slide about">
+                <h2 class="link-group-head">This is my favorite foot links</h2>
+                <ul class="link-list pure-g">
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">make dumpling</h3>
+                            <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                            <a class="link-link" href="#"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="foot">
+            <p class="page foot-info">Do thank, Do given</p>
+        </div>
+    </body>
+</html>

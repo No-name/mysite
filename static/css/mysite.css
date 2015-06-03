@@ -1,0 +1,243 @@
+/** style for the general part of MY-SITE **/
+
+body {
+    margin : 0;
+    padding : 0;
+}
+
+.head {
+    background-color: #d5d5d5;
+}
+
+/** define the slogan style, separate the link from the title **/
+.slogan {
+    position : relative;
+    display: inline-block;
+    margin: 2em 0;
+}
+
+.slogan-head {
+    font-size: 2em;
+    padding : 1em 0;
+    margin: 0;
+}
+
+.slogan-link {
+    position : absolute;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+}
+
+/** define the menu style **/
+.pure-menu {
+    font-size: 1.5em;
+}
+
+.pure-menu > ul {
+    width : 100%;
+}
+
+.pure-menu-link {
+    background-color : #202020;
+    text-align : center;
+
+    -webkit-border-radius: .5em .5em 0 0;
+    -moz-border-radius: .5em .5em 0 0;
+    border-radius: .5em .5em 0 0;
+}
+
+.pure-menu-link:hover {
+    background-color: #3F3F3F;
+}
+
+.menu-active, .menu-active:hover {
+    background-color: #0081c2;
+}
+
+/** menu under color distinct menus **/
+.menu1 {
+    border-bottom : solid darkgreen .2em;
+}
+
+.menu2 {
+    border-bottom : solid brown .2em;
+}
+
+.menu3 {
+    border-bottom : solid purple .2em;
+}
+
+.menu4 {
+    border-bottom : solid peru .2em;
+}
+
+.content {
+    min-height: 40em;
+}
+
+/** define the foot part style **/
+.foot {
+    padding : 2em 0 2em 0;
+    background-color : #d5d5d5;
+}
+
+.foot-info {
+    text-align : center;
+}
+
+
+/** define the slide style **/
+.slide {
+    -webkit-box-shadow: 0 0 .5em #101010;
+    -moz-box-shadow: 0 0 .5em #101010;
+    box-shadow: 0 0 .5em #101010;
+
+    padding : 1em;
+    margin : 2em 0 2em 0;
+
+    min-height : 6em;
+
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+/** define the post related style **/
+.post-head, .link-group-head {
+    font-size: 1.5em;
+    border-bottom : solid #101010 .1em;
+    margin-bottom : .3em;
+}
+
+ul.post-info {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+}
+
+li.post-info-item {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    display : inline-block;
+    font-size: 1em;
+}
+
+.post-info-key {
+    display: inline-block;
+}
+
+.post-info-key:after {
+    content : ':';
+}
+
+.post-info-value {
+    display : inline-block;
+    padding : .1em 1em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+
+    background-color: #007bff;
+    margin: 0 .5em;
+}
+
+.post-content {
+    margin-left : 1.5em;
+    margin-right : 1.5em;
+}
+
+.post-content-more {
+    display : inline-block;
+    background-color: #007bff;
+    padding : .1em 1em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+}
+
+/** define the link group style **/
+.link-list {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+}
+
+.link-item {
+    list-style : none;
+    margin : .5em 0;
+    padding : 0 .5em;
+
+    display : inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.link-inner {
+    padding : .5em 1em;
+
+    background-color: #2489ce;
+
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+
+    position: relative;
+}
+
+.link-link {
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+
+    display: inline-block;
+}
+
+.link-link:hover {
+    background-color : rgba(110, 110, 110, .3);
+}
+
+ul.post-foot {
+    border-top : solid #101010 .01em;
+    list-style : none;
+    margin: 0;
+    padding : .5em .5em 0 0;
+    text-align: right;
+}
+
+li.post-foot-item {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    display : inline-block;
+    font-size: 1em;
+}
+
+.post-foot-value:before {
+    content:'(';
+}
+
+.post-foot-value:after {
+    content:')';
+}
+
+/** limit the content to the center **/
+.page {
+    margin : 0 auto;
+    max-width: 1024px;
+}
+
+/** make a responsive design **/
+@media screen and (max-width : 1280px) {
+    .page {
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+

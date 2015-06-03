@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{=T.accepted_language or 'en'}}"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <!-- www.phpied.com/conditional-comments-block-downloads/ -->
+        <!-- Always force latest IE rendering engine
+             (even in intranet) & Chrome Frame
+             Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+        <!--  Mobile Viewport Fix
+              j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+              device-width: Occupy full width of the screen in its current orientation
+              initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+              user-scalable = yes allows the user to zoom in -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{=response.title or request.application}}</title>
+        <!-- http://dev.w3.org/html5/markup/meta.name.html -->
+        <meta name="application-name" content="{{=request.application}}">
+        <!-- Speaking of Google, don't forget to set your site up:
+             http://google.com/webmasters -->
+
+        <!-- link the style sheet -->
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/pure.css')}}>
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/grids.css')}}>
+        <link type="text/css" rel="stylesheet" href={{=URL('static', 'css/purecss/grids-responsive.css')}}>
+        <link rel="stylesheet" type="text/css" href={{=URL('static', 'css/mysite.css')}}>
+
+
+    </head>
+    <body>
+
+        <div class="head">
+
+            <div class="page">
+                <div class="slogan">
+                    <h1 class="slogan-head">This is my site</h1>
+                    <a class="slogan-link" href="{{=URL('default', 'message')}}"></a>
+                </div>
+
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul class="pure-menu-list pure-g">
+                        <li class="pure-menu-item pure-u-1-4">
+                            <a class="pure-menu-link menu1 {{if response.whichPage == 'message':}} {{="menu-active"}} {{pass}}" href="{{=URL('default', 'message')}}">{{=T('Message')}}</a>
+                        </li>
+                        <li class="pure-menu-item pure-u-1-4">
+                            <a class="pure-menu-link menu2 {{if response.whichPage == 'links':}} {{="menu-active"}} {{pass}}" href="{{=URL('default', 'links')}}">{{=T('Links')}}</a>
+                        </li>
+                        <li class="pure-menu-item pure-u-1-4">
+                            <a class="pure-menu-link menu3 {{if response.whichPage == 'article':}} {{="menu-active"}} {{pass}}" href="{{=URL('default', 'article')}}">{{=T('Article')}}</a>
+                        </li>
+                        <li class="pure-menu-item pure-u-1-4">
+                            <a class="pure-menu-link menu4 {{if response.whichPage == 'about':}} {{="menu-active"}} {{pass}}" href="{{=URL('default', 'about')}}">{{=T('About')}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page content">
+            {{block CONTENT}}
+            {{end}}
+        </div>
+
+        <div class="foot">
+            <p class="page foot-info">Do thank, Do given</p>
+        </div>
+    </body>
+</html>

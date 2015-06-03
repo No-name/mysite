@@ -1,0 +1,50 @@
+{{extend 'layout.html'}}
+
+{{block CONTENT}}
+    <div class="slide">
+        <form class="pure-form link-form">
+            <input type="text" name="secret" placeholder="Secret" class="pure-input-1 pure-input-rounded">
+
+            <fieldset class="pure-group">
+                <select name="category" class="pure-input-1">
+                    <option>Simple</option>
+                    <option>Network</option>
+                    <option>C/C++</option>
+                </select>
+
+                <input type="text" name="title" placeholder="Title" class="pure-input-1"/>
+                <input type="text" name="link" placeholder="http://" class="pure-input-1" />
+                <textarea name="message" placeholder="Description" class="pure-input-1" rows="7" ></textarea>
+            </fieldset>
+
+            <button type="submit" name="submit" class="pure-input-1 pure-button pure-button-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="slide link-group">
+        <h2 class="link-group-head">This is my favorite foot links</h2>
+        <ul class="link-list pure-g">
+            <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                <div class="link-inner">
+                    <h3 class="link-title">make dumpling</h3>
+                    <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                    <a class="link-link" href="#"></a>
+                </div>
+            </li>
+            <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                <div class="link-inner">
+                    <h3 class="link-title">make dumpling</h3>
+                    <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                    <a class="link-link" href="#"></a>
+                </div>
+            </li>
+            <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                <div class="link-inner">
+                    <h3 class="link-title">make dumpling</h3>
+                    <p class="link-desc">describe how to make dumpling from the vary ground</p>
+                    <a class="link-link" href="#"></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+{{end}}

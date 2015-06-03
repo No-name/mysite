@@ -1,0 +1,60 @@
+{{extend 'layout.html'}}
+
+
+{{block CONTENT}}
+    <div class="slide">
+        <form class="pure-form post-form">
+            <input type="text" name="secret" placeholder="the secret" class="pure-input-1 pure-input-rounded">
+            <fieldset class="pure-group">
+                <input type="text" name="title" placeholder="the title" class="pure-input-1"/>
+                <textarea name="message" placeholder="the content" class="pure-input-1" rows="7" ></textarea>
+            </fieldset>
+
+            <button type="submit" name="submit" class="pure-input-1 pure-button pure-button-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="slide post">
+        <h2 class="post-head">This is a special message</h2>
+
+        <ul class="post-info">
+            <li class="post-info-item"><span class="post-info-key">Category</span><span class="post-info-value">Simple</span></li>
+            <li class="post-info-item"><span class="post-info-key">Date</span><time class="post-info-value">2015.6.2</time></li>
+        </ul>
+
+        <p class="post-content">
+            Pure doesn't ship with icon fonts, but we play nice with existing ones.
+            Incorporating icon fonts with Pure Buttons is easy. In the example below, we're using icon fonts from Font Awesome.
+            Put the Font Awesome CSS file on your page and use an &lt;i&gt; element within a pure-button element...
+        </p>
+
+        <p class="post-content post-content-more">Read More</p>
+
+        <ul class="post-foot">
+            <li class="post-foot-item"><span class="post-foot-key">Views</span><span class="post-foot-value">150</span></li>
+            <li class="post-foot-item"><span class="post-foot-key">Comment</span><span class="post-foot-value">30</span></li>
+        </ul>
+    </div>
+
+    <div class="slide post">
+        <h2 class="post-head">This is a special message</h2>
+
+        <ul class="post-info">
+            <li class="post-info-item"><span class="post-info-key">Category</span><span class="post-info-value">Simple</span></li>
+            <li class="post-info-item"><span class="post-info-key">Date</span><time class="post-info-value">2015.6.2</time></li>
+        </ul>
+
+        <p class="post-content">
+            Pure doesn't ship with icon fonts, but we play nice with existing ones.
+            Incorporating icon fonts with Pure Buttons is easy. In the example below, we're using icon fonts from Font Awesome.
+            Put the Font Awesome CSS file on your page and use an &lt;i&gt; element within a pure-button element...
+        </p>
+
+        <p class="post-content post-content-more">Read More</p>
+
+        <ul class="post-foot">
+            <li class="post-foot-item"><span class="post-foot-key">Views</span><span class="post-foot-value">150</span></li>
+            <li class="post-foot-item"><span class="post-foot-key">Comment</span><span class="post-foot-value">30</span></li>
+        </ul>
+    </div>
+{{end}}
