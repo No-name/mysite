@@ -7,19 +7,39 @@
 
             <fieldset class="pure-group">
                 <select name="category" class="pure-input-1">
-                    <option>Simple</option>
-                    <option>Network</option>
-                    <option>C/C++</option>
+                {{for k in groups :}}
+                    <option value="{{=k}}">{{=groups[k]}}</option>
+                {{pass}}
                 </select>
 
                 <input type="text" name="title" placeholder="Title" class="pure-input-1"/>
                 <input type="text" name="link" placeholder="http://" class="pure-input-1" />
-                <textarea name="message" placeholder="Description" class="pure-input-1" rows="7" ></textarea>
+                <textarea name="desc" placeholder="Description" class="pure-input-1" rows="7" ></textarea>
             </fieldset>
 
             <button type="submit" name="submit" class="pure-input-1 pure-button pure-button-primary">Submit</button>
         </form>
     </div>
+
+    {{for k in links:}}
+        {{if len(links[k]) > 0 :}}
+            <div class="slide link-group">
+                <h2 class="link-group-head">{{=groups[k]}}</h2>
+
+                <ul class="link-list pure-g">
+                {{for link in links[k]:}}
+                    <li class="link-item pure-u-1-1 pure-u-md-1-2">
+                        <div class="link-inner">
+                            <h3 class="link-title">{{=link['title']}}</h3>
+                            <p class="link-desc">{{=link['desc']}}</p>
+                            <a class="link-link" href="{{=link['link']}}"></a>
+                        </div>
+                    </li>
+                {{pass}}
+                </ul>
+            </div>
+        {{pass}}
+    {{pass}}
 
     <div class="slide link-group">
         <h2 class="link-group-head">This is my favorite foot links</h2>

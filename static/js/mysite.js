@@ -12,11 +12,11 @@
                 url : 'http://127.0.0.1:8000/mysite/default/submit.json?type=link',
 
                 data : {
-                    secret : 'abc',
-                    category : '1',
-                    title : 'hello',
-                    link : 'http',
-                    desc : 'this'
+                    secret : $(this).find("input[name='secret']").val(),
+                    category : $(this).find("select[name='category']").val(),
+                    title : $(this).find("input[name='title']").val(),
+                    link : $(this).find("input[name='link']").val(),
+                    desc : $(this).find("textarea").val()
                 },
 
                 success : function () {
