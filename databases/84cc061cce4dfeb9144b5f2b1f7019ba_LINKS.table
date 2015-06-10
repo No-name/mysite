@@ -1,5 +1,5 @@
 (dp1
-S'description'
+S'DESCRIPTION'
 p2
 (dp3
 S'length'
@@ -10,7 +10,7 @@ p5
 I00
 sS'sortable'
 p6
-I4
+I5
 sS'sql'
 p7
 S'CHAR(1048576)'
@@ -22,7 +22,7 @@ sS'type'
 p10
 S'string'
 p11
-ssS'address'
+ssS'LINK_GROUP'
 p12
 (dp13
 g4
@@ -30,32 +30,32 @@ I512
 sg5
 I00
 sg6
-I2
+I6
 sg7
-S'CHAR(512)'
+S'INTEGER REFERENCES LINK_GROUP (id) ON DELETE CASCADE'
 p14
 sg9
 I00
 sg10
-g11
-ssS'id'
+S'reference LINK_GROUP'
 p15
-(dp16
+ssS'TITLE'
+p16
+(dp17
 g4
 I512
 sg5
 I00
 sg6
-I1
+I4
 sg7
-S'INTEGER PRIMARY KEY AUTOINCREMENT'
-p17
+S'CHAR(512)'
+p18
 sg9
 I00
 sg10
-S'id'
-p18
-ssS'link_group'
+g11
+ssS'TIMESTAMP'
 p19
 (dp20
 g4
@@ -63,16 +63,16 @@ I512
 sg5
 I00
 sg6
-I5
+I2
 sg7
-S'INTEGER REFERENCES LINK_GROUP (id) ON DELETE CASCADE'
+S'TIMESTAMP'
 p21
 sg9
 I00
 sg10
-S'reference LINK_GROUP'
+S'datetime'
 p22
-ssS'title'
+ssS'ADDRESS'
 p23
 (dp24
 g4
@@ -88,4 +88,20 @@ sg9
 I00
 sg10
 g11
+ssS'id'
+p26
+(dp27
+g4
+I512
+sg5
+I00
+sg6
+I1
+sg7
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p28
+sg9
+I00
+sg10
+g26
 ss.

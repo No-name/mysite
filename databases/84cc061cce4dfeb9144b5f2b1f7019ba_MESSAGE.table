@@ -49,12 +49,12 @@ I00
 sg6
 I5
 sg7
-S'DATE'
+S'TIMESTAMP'
 p18
 sg9
 I00
 sg10
-S'date'
+S'datetime'
 p19
 ssS'id'
 p20

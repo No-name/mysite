@@ -6,24 +6,27 @@
     $(function () {
 
         $(".link-form").on('submit', function (event) {
-            console.log('hello submit link');
+            theForm = this;
+
+            category = $(this).find("select[name='category']").val();
 
             AJAXSubmitLinkInfo = {
-                url : 'http://127.0.0.1:8000/mysite/default/submit.json?type=link',
+                url : '/mysite/submit/link',
 
                 data : {
                     secret : $(this).find("input[name='secret']").val(),
-                    category : $(this).find("select[name='category']").val(),
+                    category : category,
                     title : $(this).find("input[name='title']").val(),
                     link : $(this).find("input[name='link']").val(),
                     desc : $(this).find("textarea").val()
                 },
 
-                success : function () {
-                    console.log('post form success');
+                success : function (data) {
+                    $(".link-group-" + category + " > ul").prepend(data);
+                    theForm.reset();
                 },
 
-                dataType : 'json'
+                dataType : null
             };
 
             $.post(AJAXSubmitLinkInfo.url,
@@ -36,7 +39,32 @@
 
 
         $(".post-form").on('submit', function (event) {
-            console.log("hello post");
+            theForm = this;
+
+            category = $(this).find("select[name='category']").val();
+
+            AJAXSubmitMessageInfo = {
+                url : '/mysite/submit/message',
+
+                data : {
+                    secret : $(this).find("input[name='secret']").val(),
+                    category : category,
+                    title : $(this).find("input[name='title']").val(),
+                    message : $(this).find("textarea[name='message']").val()
+                },
+
+                success : function (data) {
+                    $($(".post")[0]).before(data);
+                    //theForm.reset();
+                },
+
+                dataType : null
+            };
+
+            $.post(AJAXSubmitMessageInfo.url,
+                    AJAXSubmitMessageInfo.data,
+                    AJAXSubmitMessageInfo.success,
+                    AJAXSubmitMessageInfo.dataType);
 
             event.preventDefault();
         });

@@ -158,6 +158,30 @@ li.post-info-item {
     border-radius: .5em;
 }
 
+ul.post-foot {
+    border-top : solid #A0A0A0 .01em;
+    list-style : none;
+    margin: 0;
+    padding : .5em .5em 0 0;
+    text-align: right;
+}
+
+li.post-foot-item {
+    list-style : none;
+    padding : 0;
+    margin : 0;
+    display : inline-block;
+    font-size: 1em;
+}
+
+.post-foot-value:before {
+    content:'(';
+}
+
+.post-foot-value:after {
+    content:')';
+}
+
 /** define the link group style **/
 .link-list {
     list-style : none;
@@ -200,30 +224,6 @@ li.post-info-item {
 
 .link-link:hover {
     background-color : rgba(110, 110, 110, .3);
-}
-
-ul.post-foot {
-    border-top : solid #101010 .01em;
-    list-style : none;
-    margin: 0;
-    padding : .5em .5em 0 0;
-    text-align: right;
-}
-
-li.post-foot-item {
-    list-style : none;
-    padding : 0;
-    margin : 0;
-    display : inline-block;
-    font-size: 1em;
-}
-
-.post-foot-value:before {
-    content:'(';
-}
-
-.post-foot-value:after {
-    content:')';
 }
 
 /** limit the content to the center **/

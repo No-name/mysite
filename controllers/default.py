@@ -10,7 +10,7 @@ def index():
     return dict()
 
 
-def message():
+def messages():
     """
     get the message page
 
@@ -18,16 +18,26 @@ def message():
     """
 
     # get all category from the database
-    category = [row.TITLE for row in DB().select(DB.CATEGORY.TITLE)]
+    category = {}
+    for row in DB().select(DB.CATEGORY.ALL):
+        category[row.id] = row.TITLE
 
     # collect the message in our database
+    messages = []
+    for row in DB().select(DB.MESSAGE.ALL, orderby = ~DB.MESSAGE.TIMESTAMP):
+        message = {
+            'title' : row.TITLE,
+            'content' : row.CONTENT,
+            'category' : MESSAGE_CATEGORY[row.CATEGORY],
+            'date' : row.TIMESTAMP.date()
+        }
 
-
+        messages.append(message)
 
     # set which message page this function return
-    response.whichPage = 'message'
+    response.whichPage = 'messages'
 
-    return dict(category = category)
+    return dict(category = category, messages = messages)
 
 
 def links():
@@ -45,7 +55,7 @@ def links():
         links[row.id] = []
 
 
-    for row in DB().select(DB.LINKS.ALL):
+    for row in DB().select(DB.LINKS.ALL, orderby = ~DB.LINKS.TIMESTAMP):
         link = {
             'title' : row.TITLE,
             'desc' : row.DESCRIPTION,
@@ -53,6 +63,7 @@ def links():
         }
 
         links[row.LINK_GROUP].append(link)
+
 
     response.whichPage = 'links'
 
@@ -79,49 +90,5 @@ def about():
     """
 
     response.whichPage = 'about'
-
-    return dict()
-
-def storeLink(request):
-
-    post_vars = request.post_vars
-
-    values = {}
-
-    values['ADDRESS'] = post_vars['link']
-    values['TITLE'] = post_vars['title']
-    values['DESCRIPTION'] = post_vars['desc']
-    values['LINK_GROUP'] = post_vars['category']
-
-    for k in values:
-        LOG.debug('store key ' + k + " : " + values[k])
-
-
-    return True
-
-    DB.LINKS.insert(**values)
-
-    return True
-
-def storeMessage(request):
-
-    return True
-
-def submit():
-    """
-    used to submit message and link data,
-    this is an ajax response
-
-    :return:
-    """
-
-    submitType = request.vars['type']
-
-    LOG.info("submit type is " + submitType)
-
-    if (submitType == 'link'):
-        storeLink(request)
-    elif (submitType == 'message'):
-        storeMessage(request)
 
     return dict()
