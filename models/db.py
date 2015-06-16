@@ -46,6 +46,11 @@ DB.LINK_GROUP.insert(NAME = '品味生活')
 DB.LINK_GROUP.insert(NAME = '其他')
 """
 
+if hasattr(request, 'uri_language'):
+    LOG.debug("the language is " + request.uri_language)
+
+    T.force(request.uri_language)
+
 ## initialize the link category
 LINK_CATEGORY = {}
 for row in DB().select(DB.LINK_GROUP.ALL):
