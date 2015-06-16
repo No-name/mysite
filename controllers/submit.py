@@ -2,6 +2,8 @@
 
 import datetime
 
+from lmtype import NoEscape
+
 def link():
     """
     used to submit link data
@@ -49,6 +51,8 @@ def message():
     values['CONTENT'] = post_vars['message']
     values['CATEGORY'] = post_vars['category']
     values['TIMESTAMP'] = datetime.datetime.now()
+
+    LOG.debug("Content : " + values['CONTENT'])
 
     DB.MESSAGE.insert(**values)
 

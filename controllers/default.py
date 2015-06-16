@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from lmtype import NoEscape
+
 def index():
     """
     get the main page

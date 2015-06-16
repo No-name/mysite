@@ -28,10 +28,8 @@
                 <li class="post-info-item"><span class="post-info-key">Date</span><time class="post-info-value">{{=message['date']}}</time></li>
             </ul>
 
-            {{
-                if len(message['content']) > 300 :
-                    content = message['content'][0:297] + "..."
-            }}
+            {{if len(message['content']) > 300 :}}
+            {{content = message['content'][0:297] + "..."}}
                 <p class="post-content">{{=content}}</p>
 
                 <p class="post-content post-content-more">{{=T("Read More")}}</p>
